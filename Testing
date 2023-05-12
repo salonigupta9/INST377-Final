@@ -1,2 +1,31 @@
 
-Hello World!
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Farmers Markets in the Area</title>
+    <style>
+      /* CSS styles here */
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Farmers Markets in the Area</h1>
+      <p>Welcome to our website that showcases all the farmers markets in the area.</p>
+    </header>
+    <main>
+      <h2>List of Farmers Markets</h2>
+      <ul>
+        <li><strong>Farmers Market A:</strong> City A</li>
+        <li><strong>Farmers Market B:</strong> City B</li>
+        <li><strong>Farmers Market C:</strong> City C</li>
+        <li><strong>Farmers Market D:</strong> City D</li>
+        <!-- Add more farmers markets here -->
+      </ul>
+      <h2>Map of Farmers Markets</h2>
+      <div id="map"></div>
+    </main>
+    <footer>
+      <p>Copyright &copy; 2023 Farmers Markets in the Area</p>
+    </footer>
+  </body>
+</html> 
