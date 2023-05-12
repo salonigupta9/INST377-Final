@@ -52,9 +52,11 @@ function markerPlace(array, map) {
   array.forEach((item) => {
       console.log('markerPlace', item);
       const {latitude, longitude} = item.location;
-      L.marker([latitude, longitude]).addTo(map);
+      const marker = L.marker([latitude, longitude]).addTo(map);
+      marker.bindPopup(item.market_name).openPopup();
   });
 }
+
 
 
 async function mainEvent() {  // the async keyword means we can make API requests
