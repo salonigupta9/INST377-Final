@@ -8,7 +8,7 @@ function injectHTML(list) {
   const target = document.querySelector('#market_name');
   target.innerHTML = '';
   list.forEach((item) => {
-    const str = `<li>${item.name}</li>`;
+    const str = `<li>${item.market_name}</li>`;
     target.innerHTML += str
   })
 }
@@ -16,13 +16,13 @@ function injectHTML(list) {
 function filterList(list, query) {
 
   return list.filter((item) => {
-    const lowerCaseName = item.name.toLowerCase();
+    const lowerCaseName = item.market_name.toLowerCase();
     const lowerCaseQuery = query.toLowerCase();
     return lowerCaseName.includes(lowerCaseQuery)
   })
 }
 
-function cutRestaurantList(list) {
+function cutMarketList(list) {
   console.log('fired cut list');
   const range = [...Array(15).keys()];
   return (newArray = range.map((item) => {
@@ -51,10 +51,11 @@ function markerPlace(array, map) {
 
   array.forEach((item) => {
       console.log('markerPlace', item);
-      const {coordinates} = item.geocoded_column_1;
-      L.marker([coordinates[1], coordinates[0]]).addTo(map);
+      const {latitude, longitude} = item.location;
+      L.marker([latitude, longitude]).addTo(map);
   });
 }
+
 
 async function mainEvent() {  // the async keyword means we can make API requests
   const mainForm = document.querySelector('.main_form'); // This class name needs to be set on your form before you can listen for an event on it
